@@ -11,10 +11,10 @@ int main() {
 	scanf("%lu", &a);
 	scanf("%lu", &b);
 	//Input validation
-	printf("M: %lu\nA: %lu\nB %lu\n", m, a, b);
+	printf("M: %lu\nA: %lu\nB: %lu\n", m, a, b);
 	//Если условие выполняется, то можно спокойно вычитать
 	if (a < (m - b)) {
-		printf("Result of adding: %lu\n", a+b);
+		printf("Result of adding: %lu\n", a + b);
 	} else { //Иначе легкая математика
 		printf("Result of adding: %lu\n", m - ((m - a) + (m - b)));
 	}
