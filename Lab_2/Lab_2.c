@@ -37,10 +37,18 @@ uint64_t multiplication(uint64_t multA, uint64_t multB, uint64_t module) {
 }
 
 uint64_t modPow(uint64_t powA, uint64_t module, uint64_t power) {
-	uint64_t i;
-	uint64_t result;
-	for (i = 0; i < power; ++i) {
-		result = multiplication(powA, powA, module);
+	//uint64_t i;
+	uint64_t result = 1;
+	printf("start powering\n");
+	/*for (i = 0; i < power; ++i) {
+		result = multiplication(result, powA, module);
+		printf("preresult = %lu \n", result);
+		printf("iteration number: %lu", i);
+	}*/
+	for (; power > 0; power = power >> 1, powA = multiplication(powA, powA, module)) {
+		if (power & 1) {
+			result = multiplication(result, powA, module);
+		}
 	}
 	return result;
 }
